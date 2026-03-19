@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarun Wuyyuru — ML Engineer &amp; Builder</title>
+  <meta name="description" content="ML engineer building intelligent systems. Graph neural networks, autonomous research agents, LLM orchestration. Projects, tools, and packages.">
+  <meta name="keywords" content="Tarun Wuyyuru, ML engineer, machine learning, GNN, LLM, portfolio, Python, PyTorch, AI">
+  <meta name="author" content="Tarun Wuyyuru">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tarunwuyyuru26.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tarun Wuyyuru — ML Engineer &amp; Builder">
+  <meta property="og:description" content="ML engineer building intelligent systems. Projects, tools, and packages.">
+  <meta property="og:url" content="https://tarunwuyyuru26.github.io/portfolio/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tarun Wuyyuru — ML Engineer &amp; Builder">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111010; color: #d0ccc8; font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #332a22; border-radius: 2px; }
+
+  /* --- Nav --- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 40px;
+    background: rgba(14,13,12,0.9); backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f0883e0a;
+  }
+  .logo { font-size: 0.85rem; font-weight: 200; letter-spacing: 4px; text-transform: uppercase; color: #999; }
+  .logo span { color: #f0883e; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 0.65rem; color: #665a50; text-decoration: none; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: #f0883e; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 40px; }
+
+  /* --- Hero --- */
+  .hero { padding: 140px 0 60px; }
+  .hero-terminal {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #555;
+    margin-bottom: 20px; line-height: 2;
+  }
+  .hero-terminal .prompt { color: #f0883e66; }
+  .hero-terminal .cmd { color: #f0883e; }
+  .hero-terminal .cursor { display: inline-block; width: 6px; height: 11px; background: #f0883e; animation: blink 1s step-end infinite; vertical-align: middle; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .hero h1 { font-size: 2.4rem; font-weight: 200; letter-spacing: 2px; color: #f0ece8; margin-bottom: 12px; }
+  .hero p { font-size: 0.85rem; color: #807870; line-height: 1.7; max-width: 500px; font-weight: 300; }
+  .hero-links { display: flex; gap: 12px; margin-top: 24px; }
+  .hero-links a {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    padding: 6px 14px; border: 1px solid #f0883e18; border-radius: 2px;
+    color: #998878; text-decoration: none; letter-spacing: 0.5px; transition: all 0.2s;
+  }
+  .hero-links a:hover { border-color: #f0883e55; color: #f0883e; background: #f0883e08; }
+  .hero-links a .icon { margin-right: 4px; }
+
+  .divider { height: 1px; background: linear-gradient(to right, #f0883e25, transparent 60%); margin: 40px 0; }
+
+  /* --- Section headers --- */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+    color: #665a50; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #f0883e0a; }
+  .section-num { color: #f0883e88; }
+
+  /* --- Bento Grid --- */
+  .bento { display: grid; gap: 10px; margin-bottom: 50px; }
+  .bento-2x2 { grid-template-columns: 1fr 1fr; }
+  .bento-3col { grid-template-columns: 1fr 1fr 1fr; }
+  .bento-card {
+    background: #1a1714; border: 1px solid #f0883e0a; border-radius: 8px;
+    padding: 20px; transition: all 0.25s; cursor: default; position: relative; overflow: hidden;
+  }
+  .bento-card:hover { border-color: #f0883e20; background: #1f1b17; }
+  .bento-card.wide { grid-column: span 2; }
+  .bento-card h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+    color: #7a6a5a; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .bento-card .val { font-size: 1.6rem; font-weight: 200; color: #f0883e; }
+  .bento-card .accent { color: #f0883e; }
+  .bento-card p { font-size: 0.7rem; color: #8a7e74; line-height: 1.6; }
+
+  /* --- Skill bars --- */
+  .skill-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .skill-name { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #998a7a; }
+  .skill-bar { flex: 1; height: 2px; background: #2a2320; margin: 0 12px; border-radius: 1px; }
+  .skill-fill { height: 100%; border-radius: 1px; }
+  .skill-pct { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: #665a50; }
+
+  /* --- Project cards --- */
+  .project-card { cursor: pointer; }
+  .project-card:hover { border-color: #f0883e30; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .project-name { font-size: 0.85rem; font-weight: 400; color: #e0dad4; }
+  .project-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.5rem;
+    padding: 2px 8px; border-radius: 2px; letter-spacing: 0.5px;
+  }
+  .tag-ml { background: #f0883e18; color: #f0a060; }
+  .tag-web { background: #d4884018; color: #d4a870; }
+  .tag-devops { background: #c0783018; color: #c09860; }
+  .tag-data { background: #f0883e18; color: #f0983e; }
+  .project-desc { font-size: 0.65rem; color: #8a7e74; line-height: 1.5; margin-bottom: 10px; }
+  .project-meta { display: flex; gap: 14px; }
+  .project-meta span { font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; color: #665a50; }
+  .project-meta .active { color: #f0883e; }
+  .project-meta .wip { color: #d4a050; }
+
+  /* --- Terminal block --- */
+  .terminal-block {
+    background: #141210; border: 1px solid #f0883e0a; border-radius: 8px;
+    padding: 20px; font-family: 'JetBrains Mono', monospace; margin-bottom: 10px;
+  }
+  .terminal-block .term-header { display: flex; gap: 6px; margin-bottom: 14px; }
+  .terminal-block .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .terminal-block .dot-r { background: #f0883e55; }
+  .terminal-block .dot-y { background: #f0b83e44; }
+  .terminal-block .dot-g { background: #d4a05044; }
+  .term-line { font-size: 0.6rem; line-height: 2.2; }
+  .term-line .p { color: #665a50; }
+  .term-line .c { color: #f0883e; }
+  .term-line .f { color: #d4a870; }
+  .term-line .s { color: #f0a060; }
+  .term-line .o { color: #8a7e74; }
+  .term-line .comment { color: #3a3430; }
+
+  /* --- Contact --- */
+  .contact-row { display: flex; gap: 10px; margin-bottom: 50px; }
+  .contact-card { flex: 1; text-align: center; padding: 24px; }
+  .contact-card:hover { border-color: #f0883e30; }
+  .contact-card .contact-icon { font-size: 1.2rem; margin-bottom: 8px; opacity: 0.6; color: #f0883e; }
+  .contact-card .contact-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+    color: #7a6a5a; letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  /* --- Footer --- */
+  footer {
+    text-align: center; padding: 40px; border-top: 1px solid #f0883e0a;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: #3a3430;
+  }
+  footer span { color: #f0883e55; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span>T</span>arun</div>
+  <div class="nav-links">
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Tools</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-terminal">
+      <span class="prompt">~</span> <span class="cmd">whoami</span><span class="cursor"></span><br>
+    </div>
+    <h1>Tarun Wuyyuru</h1>
+    <p>ML engineer building intelligent systems. From graph neural networks to autonomous research agents — I ship things that think.</p>
+    <div class="hero-links">
+      <a href="#"><span class="icon">↗</span> GitHub</a>
+      <a href="#"><span class="icon">↗</span> LinkedIn</a>
+      <a href="#"><span class="icon">↓</span> Resume</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label"><span class="section-num">01</span> Overview</div>
+  <div class="bento bento-3col">
+    <div class="bento-card"><h4>Projects</h4><div class="val accent">12</div></div>
+    <div class="bento-card"><h4>Domains</h4><div class="val">5</div></div>
+    <div class="bento-card"><h4>Packages</h4><div class="val">4</div></div>
+  </div>
+
+  <div class="section-label"><span class="section-num">02</span> Skills</div>
+  <div class="bento bento-2x2">
+    <div class="bento-card wide">
+      <h4>Core</h4>
+      <div class="skill-row">
+        <span class="skill-name">Python</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:92%;background:#f0883e"></div></div>
+        <span class="skill-pct">92</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">PyTorch</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%;background:#f0883e"></div></div>
+        <span class="skill-pct">85</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">TypeScript</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:70%;background:#d4a050"></div></div>
+        <span class="skill-pct">70</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Three.js</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:60%;background:#d4a050"></div></div>
+        <span class="skill-pct">60</span>
+      </div>
+    </div>
+    <div class="bento-card">
+      <h4>ML / AI</h4>
+      <p>GNNs, Reinforcement Learning, LoRA fine-tuning, Bayesian optimization, LLM orchestration</p>
+    </div>
+    <div class="bento-card">
+      <h4>Infrastructure</h4>
+      <p>Cloudflare Workers, Neo4j, Pinecone, Docker, CI/CD pipelines</p>
+    </div>
+  </div>
+
+  <div class="section-label"><span class="section-num">03</span> Projects</div>
+  <div class="bento bento-2x2">
+    <div class="bento-card project-card">
+      <div class="project-header">
+        <span class="project-name">GNN AML Detection</span>
+        <span class="project-tag tag-ml">ML</span>
+      </div>
+      <p class="project-desc">Graph neural network for anti-money laundering. Detects suspicious transaction patterns using graph convolutions + reinforcement learning.</p>
+      <div class="project-meta">
+        <span class="active">● Active</span>
+        <span>85% complete</span>
+        <span>⭐ 24</span>
+      </div>
+    </div>
+    <div class="bento-card project-card">
+      <div class="project-header">
+        <span class="project-name">MiroClaw</span>
+        <span class="project-tag tag-ml">ML</span>
+      </div>
+      <p class="project-desc">Local LLM orchestration engine running on RTX 5070 Ti. Multi-model routing with intelligent context management.</p>
+      <div class="project-meta">
+        <span class="active">● Active</span>
+        <span>60% complete</span>
+        <span>⭐ 12</span>
+      </div>
+    </div>
+    <div class="bento-card project-card">
+      <div class="project-header">
+        <span class="project-name">Autoresearch</span>
+        <span class="project-tag tag-ml">ML</span>
+      </div>
+      <p class="project-desc">Autonomous ML experiment runner. Designs, executes, and analyzes experiments with minimal human intervention.</p>
+      <div class="project-meta">
+        <span class="active">● Active</span>
+        <span>70% complete</span>
+        <span>⭐ 8</span>
+      </div>
+    </div>
+    <div class="bento-card project-card">
+      <div class="project-header">
+        <span class="project-name">Life OS</span>
+        <span class="project-tag tag-web">WEB</span>
+      </div>
+      <p class="project-desc">Personal operating system dashboard. Unified hub connecting productivity, health, learning, and project tracking.</p>
+      <div class="project-meta">
+        <span class="wip">● In Progress</span>
+        <span>30% complete</span>
+        <span>⭐ 5</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><span class="section-num">04</span> Tools & Packages</div>
+  <div class="terminal-block">
+    <div class="term-header">
+      <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+    </div>
+    <div class="term-line"><span class="p">$</span> <span class="c">pip install</span> <span class="s">tarun-aml-toolkit</span></div>
+    <div class="term-line"><span class="o">  Graph-based AML detection utilities. Build, train, evaluate GNN models.</span></div>
+    <div class="term-line" style="margin-top:4px"><span class="p">$</span> <span class="c">pip install</span> <span class="s">autoresearch-cli</span></div>
+    <div class="term-line"><span class="o">  CLI for autonomous ML experiments. Configure, launch, analyze.</span></div>
+    <div class="term-line" style="margin-top:4px"><span class="p">$</span> <span class="c">npx</span> <span class="s">create-miroclaw-plugin</span> <span class="f">--template starter</span></div>
+    <div class="term-line"><span class="o">  Scaffold a MiroClaw plugin. Extend local LLM orchestration.</span></div>
+    <div class="term-line" style="margin-top:4px"><span class="p">$</span> <span class="c">brew install</span> <span class="s">whisper-pipe</span></div>
+    <div class="term-line"><span class="o">  Voice-to-text pipeline. Plug into any workflow.</span></div>
+    <div class="term-line" style="margin-top:8px"><span class="comment"># click any command to view docs →</span></div>
+  </div>
+
+  <div class="section-label"><span class="section-num">05</span> Connect</div>
+  <div class="contact-row">
+    <div class="bento-card contact-card">
+      <div class="contact-icon">✉</div>
+      <div class="contact-label">Email</div>
+    </div>
+    <div class="bento-card contact-card">
+      <div class="contact-icon">⌘</div>
+      <div class="contact-label">GitHub</div>
+    </div>
+    <div class="bento-card contact-card">
+      <div class="contact-icon">◆</div>
+      <div class="contact-label">LinkedIn</div>
+    </div>
+    <div class="bento-card contact-card">
+      <div class="contact-icon">▶</div>
+      <div class="contact-label">Resume</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  built with curiosity <span>&</span> cloudflare · © 2026 tarun wuyyuru
+</footer>
+
+</body>
+</html>
